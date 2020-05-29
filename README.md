@@ -2,7 +2,7 @@
 
 ![Telegram automated db backup](icon.png)
 
-This repo is aimed to provide a python script to make a **daily backup** of your database and upload it into a [Telegram](https://telegram.org) chat.  
+This repo provides a Python script that does a **daily backup**.
 In this way, you do not need to take care of where to save the backups or buying any cloud service.
 
 
