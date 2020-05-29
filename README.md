@@ -2,8 +2,8 @@
 
 ![Telegram automated db backup](icon.png)
 
-This repo provides a Python script that does a **daily backup**.
-In this way, you do not need to take care of where to save the backups or buying any cloud service.
+This repo provides a Python script that does a **daily backup**.  
+This way, you do not need to take care of where to save the backups or buying any cloud service.  
 
 
 ## How does it work?
