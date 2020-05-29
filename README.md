@@ -3,16 +3,16 @@
 ![Telegram automated db backup](icon.png)
 
 This repo is aimed to provide a python script to make a **daily backup** of your database and upload it into a [Telegram](https://telegram.org) chat.  
-In this way you do not need to take care about where to save the backups orbuying any cloud service.
+In this way, you do not need to take care of where to save the backups or buying any cloud service.
 
 
-## How it works?
+## How does it work?
 
 The Python script it's based on:
 - pyrogram
 - unix commands (like mysqldump, zip)
 
-**Pyrogram** is a python framework which allows you to use your [Telegram](https://telegram.org) account, so with this framework you can send message, files, picture etc. automatically without doing it manually.
+**Pyrogram** is a python framework which allows you to use your [Telegram](https://telegram.org) account, so with this framework you can send a message, files, pictures etc. automatically without doing it manually.
 
 
 ### Requirements
@@ -40,7 +40,7 @@ $ pip3 install pyrogram tgcrypto
 To allow pyrogram to use your account you need to have an username on Telegram and create a Telegram 3rd "app" here: https://my.telegram.org/auth?to=apps.  
 Generated the app, this app will have **api_id** and **api_hash**, put these data into the conf part in`bak.py`.
 
-Afterwards, fill the mysql credentials and the zip password and run the python script using
+Afterward, fill the mysql credentials and the zip password and run the python script using
 ```bash
 $ python3 bak.py
 ```
@@ -68,7 +68,7 @@ Fill the last line with:
 This will run the script daily on at midnight 😉.
 
 That's all!  
-Open a issue if you need anything.  
+Open an issue if you need anything.  
 
 
 ## Credits
