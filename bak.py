@@ -19,10 +19,12 @@ app = Client(
   api_hash="1234d401234d401234d401234d40"
 )
 
+# --no-tablespaces is required for mysql 8.0.21 based on the user privileges (https://dba.stackexchange.com/questions/271981/access-denied-you-need-at-least-one-of-the-process-privileges-for-this-ope)
+
 with app:
-  os.system("mysqldump --column-statistics=0 -h " + mysql_localhost + " -u " + mysql_username + " -p'" + mysql_password + "' " + world_db + " > world.sql")
-  os.system("mysqldump --column-statistics=0 -h " + mysql_localhost + " -u " + mysql_username + " -p'" + mysql_password + "' " + char_db + " > characters.sql")
-  os.system("mysqldump --column-statistics=0 -h " + mysql_localhost + " -u " + mysql_username + " -p'" + mysql_password + "' " + auth_db + " > auth.sql")
+  os.system("mysqldump --no-tablespaces --column-statistics=0 -h " + mysql_localhost + " -u " + mysql_username + " -p'" + mysql_password + "' " + world_db + " > world.sql")
+  os.system("mysqldump --no-tablespaces --column-statistics=0 -h " + mysql_localhost + " -u " + mysql_username + " -p'" + mysql_password + "' " + char_db + " > characters.sql")
+  os.system("mysqldump --no-tablespaces --column-statistics=0 -h " + mysql_localhost + " -u " + mysql_username + " -p'" + mysql_password + "' " + auth_db + " > auth.sql")
   os.system("zip -P " + zip_password + " db.zip world.sql characters.sql auth.sql")
 
   time.sleep(1)
