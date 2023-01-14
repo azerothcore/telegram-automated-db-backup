@@ -39,25 +39,25 @@ app = Client(
 # --no-tablespaces is required for mysql 8.0.21 based on the user privileges (https://dba.stackexchange.com/questions/271981/access-denied-you-need-at-least-one-of-the-process-privileges-for-this-ope)
 
 with app:
-    os.system("mysqldump --no-tablespaces --column-statistics=0 -h {} -u {} -p'{}' {} > world.sql".format(
+    os.system("./dump-tables-mysql.sh {} {} {} {} world".format(
         mysql_localhost,
         mysql_username,
         mysql_password,
         world_db
     ))
-    os.system("mysqldump --no-tablespaces --column-statistics=0 -h {} -u {} -p'{}' {} > characters.sql".format(
+    os.system("./dump-tables-mysql.sh {} {} {} {} characters".format(
         mysql_localhost,
         mysql_username,
         mysql_password,
         char_db
     ))
-    os.system("mysqldump --no-tablespaces --column-statistics=0 -h {} -u {} -p'{}' {} > auth.sql".format(
+    os.system("./dump-tables-mysql.sh {} {} {} {} auth".format(
         mysql_localhost,
         mysql_username,
         mysql_password,
         auth_db
     ))
-    os.system("zip -P {} {} world.sql characters.sql auth.sql".format(
+    os.system("zip -P {} -r {} world characters auth".format(
         zip_password,
         zip_name
     ))
@@ -69,9 +69,9 @@ with app:
         zip_name
     )
 
-    os.remove("world.sql")
-    os.remove("characters.sql")
-    os.remove("auth.sql")
+    os.system("rm -rf world")
+    os.system("rm -rf characters")
+    os.system("rm -rf auth")
     os.remove(zip_name)
 
     app.stop()
