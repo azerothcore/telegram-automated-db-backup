@@ -49,7 +49,7 @@ auth_db = "acore_auth"
 
 # zip config
 zip_password = "db_zipped"
-zip_name = "db{:%Y%m%d}.zip".format(datetime.now()) # this will result in a string like "db20211231.zip"
+zip_name = "db-{:%Y%m%d}.zip".format(datetime.now()) # this will result in a string like "db-20211231.zip"
 
 # replace "me" with a chat_id or username to change the chat
 char_id = "me"
@@ -68,6 +68,8 @@ Afterward, fill the mysql credentials and the zip password and run the python sc
 ```bash
 $ python3 bak.py
 ```
+
+Note: alternatively, you can also run `bak-per-table.py` if you want to make a backup with one file per table instead of one file per db.
 
 The first time, pyrogram will need from your telegram account a TOKEN that you will receive on Telegram, after this, pyrogram will generate a sqlite database in the same directory of bak.py to keep the session with your Telegram user.
 
