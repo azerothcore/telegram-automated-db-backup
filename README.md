@@ -76,7 +76,7 @@ The first time, pyrogram will need from your telegram account a TOKEN that you w
 Finally, you just need to run the script bak.py and your db will be pushed in your personal chat ("Saved Messages" / "me").
 
 You can change the chat where push the zip archive, replacing "me" on line 30 with a chat_id or a Telegram @Username,
-if you don't know your chat_id you can send the message `/chatid` to [@GiveChatId_Bot](https://t.me/GiveChatId_Bot) or if you need to know the chat_id of a group you can add this bot to the group and ask `/chatid`.
+if you don't know your chat_id you can ask [@username_to_id_bot](https://t.me/username_to_id_bot) to get it.
 
 ### Optional, run it daily using crontab
 
