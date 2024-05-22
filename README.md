@@ -52,7 +52,7 @@ zip_password = "db_zipped"
 zip_name = "db-{:%Y%m%d}.zip".format(datetime.now()) # this will result in a string like "db-20211231.zip"
 
 # replace "me" with a chat_id or username to change the chat
-char_id = "me"
+chat_id = "me"
 # Telegram client config
 username = "TELEGRAM_USERNAME"
 api_id=1234567
