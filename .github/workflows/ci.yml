@@ -1,0 +1,24 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+jobs:
+  check:
+    name: ruff and ty
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.14"
+      - name: Install requirements
+        run: |
+          python -m venv .venv
+          .venv/bin/pip install -r requirements_dev.txt
+      - name: ruff
+        run: .venv/bin/ruff check .
+      - name: ty
+        run: .venv/bin/ty check
